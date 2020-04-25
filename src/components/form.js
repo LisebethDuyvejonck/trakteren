@@ -16,7 +16,7 @@ const Form = () => {
         />
       </label>
       <label htmlFor="message" className={style.wrapper}>
-        <span className={style.label}>De volgende keer trakteer ik je op een:</span>
+        <span className={style.label}>De volgende keer trakteer ik je op:</span>
         <textarea
           rows="5"
           id="message"
