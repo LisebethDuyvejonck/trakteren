@@ -12,21 +12,21 @@ const client = contentful.createClient({
 
 exports.handler = async function(event, context, callback) {
   try {
-    const vuistje = querystring.parse(event.body)
-    vuistje.id = shortid.generate()
+    const treat = querystring.parse(event.body)
+    treat.id = shortid.generate()
 
     const space = await client.getSpace(process.env.CONTENTFUL_SPACE_ID)
     const environment = await space.getEnvironment("master")
-    const entry = await environment.createEntryWithId("to", vuistje.id,{
+    const entry = await environment.createEntryWithId("treat", treat.id,{
       fields :{
         to:{
-          "en-US": vuistje.to //taal, omdat ze werken met localisatiion, 1 field kan verschillende talen bevaten dus moeten we taal opgeven
+          "en-US": treat.to //taal, omdat ze werken met localisatiion, 1 field kan verschillende talen bevaten dus moeten we taal opgeven
         },
         from:{
-          "en-US": vuistje.from
+          "en-US": treat.from
         },
         message:{
-          "en-US": vuistje.message
+          "en-US": treat.message
         },
       }
     });
@@ -36,7 +36,7 @@ exports.handler = async function(event, context, callback) {
       body: JSON.stringify(entry.fields), //fields returnen omdat we dan iets zien
       statusCode: 302, //omdat we redirect gaan doen
       headers: {
-        Location: `/vuistje/${vuistje.id}`,
+        Location: `/vuistje/${treat.id}`,
       },
     })
 

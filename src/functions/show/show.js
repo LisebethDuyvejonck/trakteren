@@ -1,42 +1,19 @@
 /* eslint-disable */
-const contentful = require("contentful-management")
-
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-const client = contentful.createClient({
-  accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN,
-})
-
-const storage = new Map()
-
-
+const fetch = require('node-fetch')
 exports.handler = async function(event, context) {
   try {
-   const id = event.queryStringParameters.id.replace("/", "")
-   let vuistje;
-
-   if (storage.has(id)){
-     console.log("in storage gevonden")
-     vuistje = storage.get(id)
-
-   } else {
-    const space = await client.getSpace(process.env.CONTENTFUL_SPACE_ID)
-    const environment = await space.getEnvironment("master")
-    const entry = await environment.getEntry(id)
-
-    vuistje = {
-      to: entry.fields.to["en-US"],
-      from: entry.fields.from["en-US"],
-      message: entry.fields.message["en-US"]
+    const response = await fetch('https://icanhazdadjoke.com', {
+      headers: { Accept: 'application/json' }
+    })
+    if (!response.ok) {
+      // NOT res.status >= 200 && res.status < 300
+      return { statusCode: response.status, body: response.statusText }
     }
-    console.log("in storage plaatsen")
-    storage.set(id, vuistje)
-   }
+    const data = await response.json()
 
     return {
       statusCode: 200,
-      body: JSON.stringify(vuistje)
+      body: JSON.stringify({ msg: data.joke })
     }
   } catch (err) {
     console.log(err) // output to netlify function log

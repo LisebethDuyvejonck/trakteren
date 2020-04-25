@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Demovuistje`,
-    description: `Een demo om een vuistje te geven`,
-    author: `@devinekask`,
+    title: `Traktatie`,
+    description: `Deel een traktatie uit`,
+    author: `@lisebethduyvejonck`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,6 +26,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-use-query-params`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
