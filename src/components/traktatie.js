@@ -5,7 +5,7 @@ import coctail from "../images/coctail.png"
 const Traktatie = () => {
   // const customStyle = { maxHeight: `${height}vh` }
   return (
-    <img src={coctail} alt="coctail image"  className={style.traktatie} height="388" width="290£"></img>
+    <img src={coctail} alt="coctail"  className={style.traktatie} height="388" width="290£"></img>
     // <svg viewBox="0 20 128 88" className={style.traktatie}>
     //   <g>
     //     <path
