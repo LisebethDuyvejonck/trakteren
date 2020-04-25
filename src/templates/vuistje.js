@@ -9,13 +9,13 @@ import SEO from "../components/seo"
 export default ({ pageContext }) => {
   return (
     <Layout>
-      <SEO title="Je hebt een vuistje gekregen" />
+      <SEO title="Je hebt een traktatie gekregen" />
       <Vuist />
       <Content {...pageContext} />
       <p className={style.note}>
-        {pageContext.from} heeft jou dit vuistje gegeven.
+        {pageContext.from} trakteert jou bij de volgende ontmoeting!.
         <br />
-        Je kan ook <Link to="/create">jouw eigen vuistjes uitdelen</Link> als je
+        Je kan ook <Link to="/create">jouw eigen traktatie uitdelen</Link> als je
         wil.
       </p>
     </Layout>
