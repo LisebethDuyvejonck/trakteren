@@ -37,7 +37,7 @@ const Form = () => {
       </label>
       <input
         type="submit"
-        value="Maak een link voor dit vuistje"
+        value="Maak een link voor deze traktatie"
         className={style.button}
       />
     </form>

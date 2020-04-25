@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       <main className={style.grid}>{children}</main>
-      <a href="https://devine.be?ref=vuistje" className={style.footer}>
+      <a href="https://devine.be" className={style.footer}>
         Devine - Development 4 - 2020
       </a>
     </>

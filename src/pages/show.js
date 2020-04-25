@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from "react"
 
-
 import Layout from "../components/layout"
 import Content from "../components/content"
 
 // import style from "./show.module.css"
-import Vuist from "../components/vuist"
+import Traktatie from "../components/traktatie"
 import ShareUrl from "../components/shareUrl"
 import SEO from "../components/seo"
 import {useQueryParam, StringParam} from "use-query-params"
@@ -28,17 +27,20 @@ const ShowPage = ({location}) => {
   }, [id]); //alleen als de id verandert moet hij dit gaan uitvoeren
 
   return (
-  <Layout>
-    <SEO title="Home" />
-    {treat ? (
-      <>
-    <Vuist />
-    <ShareUrl value ={`${domain}/vuistje/${id}`} />
-    <Content {...treat} />
-    </>
-    ) : (<p> Vuistje aan het ballen ... </p>)}
-  </Layout>
-)
+    <Layout>
+      <SEO title="Home" />
+      <Traktatie />
+      <ShareUrl value ={`${domain}/traktatie/${id}`} />
+      <Content {...treat} />
+      {/* {treat ? (
+        <>
+      <Traktatie />
+      <ShareUrl value ={`${domain}/traktatie/${id}`} />
+      <Content {...treat} />
+      </>
+      ) : (<p> Je traktatie is aan het komen... </p>)} */}
+    </Layout>
+  )
 }
 
 export default ShowPage

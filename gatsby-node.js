@@ -29,8 +29,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allContentfulTreat.edges.forEach(({ node }) => {
     createPage({
-      path: `vuistje/${node.id}`,
-      component: path.resolve(`./src/templates/vuistje.js`),
+      path: `traktatie/${node.id}`,
+      component: path.resolve(`./src/templates/traktatie.js`),
       context: {
         id: node.id,
         from: node.from,

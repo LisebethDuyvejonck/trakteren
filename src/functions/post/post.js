@@ -36,7 +36,7 @@ exports.handler = async function(event, context, callback) {
       body: JSON.stringify(entry.fields), //fields returnen omdat we dan iets zien
       statusCode: 302, //omdat we redirect gaan doen
       headers: {
-        Location: `/vuistje/${treat.id}`,
+        Location: `/traktatie/${treat.id}`,
       },
     })
 

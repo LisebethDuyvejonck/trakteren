@@ -4,13 +4,15 @@
 [dev]
   command = "gatsby develop"
   port = 3000
+ 
 
-  [[redirects]]
+[[redirects]]
   from= "/post"
   to = "/.netlify/functions/post"
   status = 200
 
-  [[redirects]]
-      from= "/vuistje/*"
-      to = "/show?id=:splat"
-      status =  302
+[[redirects]]
+  from= "/traktatie/*"
+  to = "/show?id=:splat"
+  status =  302
+ 
