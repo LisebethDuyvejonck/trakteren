@@ -1,0 +1,7 @@
+[build]
+  functions = "src/functions/"
+
+
+[dev]
+  command = "gatsby develop"
+  port = 3000
