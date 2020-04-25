@@ -5,12 +5,12 @@ import style from "./form.module.css"
 const Form = () => {
   return (
     <form method="POST" action="/post" className={style.form}>
-      <label htmlFor="to" className={style.wrapper}>
+      <label htmlFor="from" className={style.wrapper}>
         <span className={style.label}>Van: </span>
         <input
           type="text"
-          id="to"
-          name="to"
+          id="from"
+          name="from"
           placeholder="Een traktatie van ..."
           className={style.text}
         />
@@ -25,12 +25,12 @@ const Form = () => {
           
         ></textarea>
       </label>
-      <label htmlFor="from" className={style.wrapper}>
+      <label htmlFor="to" className={style.wrapper}>
         <span className={style.label}>Voor: </span>
         <input
           type="text"
-          id="from"
-          name="from"
+          id="to"
+          name="to"
           className={style.text}
           placeholder="Deze traktatie is voor..."
         />

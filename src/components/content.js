@@ -6,11 +6,11 @@ const Content = ({ from, to, message }) => {
   return (
     <dl className={style.container}>
       <dt className="visually-hidden">To</dt>
-      <dd className={style.to}>{to}</dd>
+      <dd className={style.to}>Dag {to}</dd>
       <dt className="visually-hidden">Message</dt>
-      <dd className={style.message}>{message}</dd>
+  <dd className={style.message}>{from} trakteert jou de volgende keer op een {message}</dd>
       <dt className="visually-hidden">From</dt>
-      <dd className={style.from}>{from}</dd>
+      <dd className={style.to}>Liefs {from}</dd>
     </dl>
   )
 }

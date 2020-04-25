@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react"
 import Layout from "../components/layout"
 import Content from "../components/content"
 
-// import style from "./show.module.css"
+import style from "./show.module.css"
 import Traktatie from "../components/traktatie"
 import ShareUrl from "../components/shareUrl"
 import SEO from "../components/seo"
@@ -29,16 +29,13 @@ const ShowPage = ({location}) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <Traktatie />
-      <ShareUrl value ={`${domain}/traktatie/${id}`} />
-      <Content {...treat} />
-      {/* {treat ? (
+      {treat ? (
         <>
       <Traktatie />
       <ShareUrl value ={`${domain}/traktatie/${id}`} />
       <Content {...treat} />
       </>
-      ) : (<p> Je traktatie is aan het komen... </p>)} */}
+      ) : (<p className={style.show}>Je traktatie komt eraan! Even geduld... </p>)}
     </Layout>
   )
 }

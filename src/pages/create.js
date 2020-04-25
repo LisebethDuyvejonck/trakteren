@@ -9,7 +9,6 @@ const CreatePage = () => (
   <Layout>
     <SEO title="Home" />
     <Form/>
-    <Traktatie height={15}/>
   </Layout>
 )
 
