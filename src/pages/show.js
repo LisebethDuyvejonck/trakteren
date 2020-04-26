@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 
+
 import Layout from "../components/layout"
 import Content from "../components/content"
 
@@ -27,17 +28,17 @@ const ShowPage = ({location}) => {
   }, [id]); //alleen als de id verandert moet hij dit gaan uitvoeren
 
   return (
-    <Layout>
-      <SEO title="Home" />
-      {treat ? (
-        <>
-      <Traktatie />
-      <ShareUrl value ={`${domain}/traktatie/${id}`} />
-      <Content {...treat} />
-      </>
-      ) : (<p className={style.show}> Even geduld... Je traktatie komt eraan! </p>)}
-    </Layout>
-  )
+  <Layout>
+    <SEO title="Home" />
+    {treat ? (
+      <>
+    <Traktatie />
+    <ShareUrl value ={`${domain}/traktatie/${id}`} />
+    <Content {...treat} />
+    </>
+    ) : (<p className={style.loading}> Je traktatie komt eraan ... </p>)}
+  </Layout>
+)
 }
 
 export default ShowPage
