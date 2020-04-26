@@ -26,7 +26,7 @@ const Form = () => {
         ></textarea>
       </label>
       <label htmlFor="to" className={style.wrapper}>
-        <span className={style.label}>Voor: </span>
+        <span className={style.label}>Aan: </span>
         <input
           type="text"
           id="to"

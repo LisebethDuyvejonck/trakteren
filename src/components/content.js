@@ -8,7 +8,7 @@ const Content = ({ from, to, message }) => {
       <dt className="visually-hidden">To</dt>
       <dd className={style.to}>Dag {to}</dd>
       <dt className="visually-hidden">Message</dt>
-  <dd className={style.message}>{from} trakteert jou de volgende keer op een {message}</dd>
+      <dd className={style.message}>De volgende keer word je getrakteerd op {message}</dd>
       <dt className="visually-hidden">From</dt>
       <dd className={style.to}>Liefs {from}</dd>
     </dl>
