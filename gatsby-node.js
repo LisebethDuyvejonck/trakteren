@@ -33,8 +33,8 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/traktatie.js`),
       context: {
         id: node.id,
+        // message: node.message.message,
         from: node.from,
-        message: node.message.message,
         to: node.to
       },
     })
