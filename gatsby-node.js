@@ -34,8 +34,8 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         id: node.id,
         from: node.from,
-        to: node.to,
         message: node.message.message,
+        to: node.to
       },
     })
   })
