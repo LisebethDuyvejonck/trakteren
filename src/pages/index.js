@@ -9,7 +9,6 @@ import style from "./index.module.css"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-
     <Traktatie />
     <Link to="/create" className={style.button}>
       Deel een traktatie uit

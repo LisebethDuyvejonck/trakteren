@@ -14,29 +14,29 @@ const storage = new Map()
 exports.handler = async function(event, context) {
   try {
    const id = event.queryStringParameters.id.replace("/", "")
-   let traktatie;
+   let treat;
 
    if (storage.has(id)){
      console.log("in storage gevonden")
-     traktatie = storage.get(id)
+     treat = storage.get(id)
 
    } else {
     const space = await client.getSpace(process.env.CONTENTFUL_SPACE_ID)
     const environment = await space.getEnvironment("master")
     const entry = await environment.getEntry(id)
 
-    traktatie = {
+    treat = {
       to: entry.fields.to["en-US"],
       from: entry.fields.from["en-US"],
       message: entry.fields.message["en-US"]
     }
     console.log("in storage plaatsen")
-    storage.set(id, traktatie)
+    storage.set(id, treat)
    }
 
     return {
       statusCode: 200,
-      body: JSON.stringify(traktatie)
+      body: JSON.stringify(treat)
     }
   } catch (err) {
     console.log(err) // output to netlify function log

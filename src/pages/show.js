@@ -35,7 +35,7 @@ const ShowPage = ({location}) => {
       <ShareUrl value ={`${domain}/traktatie/${id}`} />
       <Content {...treat} />
       </>
-      ) : (<p className={style.show}>Je traktatie komt eraan! Even geduld... </p>)}
+      ) : (<p className={style.show}> Even geduld... Je traktatie komt eraan! </p>)}
     </Layout>
   )
 }
